@@ -1,0 +1,73 @@
+day 4
+
+
+MS SQL CONSTRAINTS   
+
+
+
+
+--CREATE DATABASE NEW_P
+CREATE TABLE STUDENT(
+S_ID INT PRIMARY KEY,S_NAME VARCHAR(100) UNIQUE,
+AGE INT CHECK(AGE>=20),EMAIL VARCHAR(100) UNIQUE,CITY VARCHAR(100) DEFAULT 'HYDERABAD'
+
+INSERT INTO STUDENT VALUES(
+101, 'Ramesh', 20, 'ram@gmail.com', 'Hyderabad'),
+(102, 'Raj', 21, 'raj@gmail.com', 'Chennai'),
+(103, 'Kiran', 22, 'kiran@gmail.com', 'Mumbai'),
+(104, 'Suresh', 23, 'suresh@gmail.com', 'Delhi'),
+(105, 'Vamshi', 24, 'vamshi@gmail.com','hYDERABAD')
+
+
+SELECT * FROM STUDENT
+
+
+INSERT INTO STUDENT
+(S_ID, S_NAME, AGE, EMAIL)
+VALUES
+(106, 'Ajay', 20, 'ajay@gmail.com');
+
+
+CREATE TABLE ECOMMERCE(
+E_ID INT PRIMARY KEY,
+E_NAME VARCHAR(100) UNIQUE,
+REGION VARCHAR(100) DEFAULT 'ANAND_NAGAR_COLONY',
+AGE INT CHECK(AGE>=35),
+EMAIL VARCHAR(100) UNIQUE)
+
+--INSERT INTO ECOMMERCE VALUES(
+--INSERT INTO ECOMMERCE
+----(E_ID, E_NAME, REGION, AGE, EMAIL)
+
+INSERT INTO ECOMMERCE
+VALUES
+(101, 'Ramesh', 'Hyderabad', 35, 'ramesh@gmail.com'),
+(102, 'Suresh', DEFAULT, 40, 'suresh@gmail.com'),
+(103, 'Kiran', 'Mumbai', 38, 'kiran@gmail.com'),
+(104, 'Ajay', 'Delhi', 45, 'ajay@gmail.com'),
+(105, 'Vamshi', 'Bangalore', 50, 'vamshi@gmail.com');
+
+
+SELECT * FROM ECOMMERCE
+
+
+CREATE TABLE DEPARTMENT
+(
+    D_ID INT PRIMARY KEY,
+    D_NAME VARCHAR(50) NOT NULL,
+    HOD_NAME VARCHAR(50) NOT NULL,
+    LOCATION VARCHAR(50) DEFAULT 'Hyderabad',
+    CAPACITY INT CHECK (CAPACITY >= 30)
+);
+
+INSERT INTO DEPARTMENT
+(D_ID, D_NAME, HOD_NAME, LOCATION, CAPACITY)
+VALUES
+(1, 'CSE', 'Raghu', 'Hyderabad', 120),
+(2, 'ECE', 'Srinivas', 'Chennai', 100),
+(3, 'EEE', 'Kumar', 'Mumbai', 80),
+(4, 'CIVIL', 'Prasad', 'Delhi', 60),
+(5, 'MECH', 'Ramesh', 'Bangalore', 90)
+
+
+SELECT * FROM DEPARTMENT
